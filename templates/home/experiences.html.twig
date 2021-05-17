@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon CV en symfo{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col">
+        <h1>Mes expériences</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th scope="col">Société</th>
+                <th scope="col">Intitulé du poste</th>
+                <th scope="col">Années</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Kairios</th>
+                    <td>Développeur Web</td>
+                    <td>2020 - 2021</td>
+                </tr>
+                <tr>
+                    <th scope="row">Weedoit</th>
+                    <td>Aide comptable</td>
+                    <td>2016 - 2018</td>
+                </tr>
+                <tr>
+                    <th scope="row">Droid-TV</th>
+                    <td>Co-fondateur</td>
+                    <td>2013 - 2016</td>
+                </tr>
+                <tr>
+                    <th scope="row">Veolia Service support FR</th>
+                    <td>Comptable Fournisseur</td>
+                    <td>2011 - 2015</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-4">
+        <a href="/hobbies">
+            <button type="button" class="btn btn-primary">Voir mes hobbies</button>
+        </a>
+    </div>
+</div>
+{% endblock %}
