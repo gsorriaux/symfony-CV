@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Education;
+use App\Entity\Experience;
+use App\Entity\Hobby;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,8 +25,13 @@ class HomeController extends AbstractController
      */
     public function experiences(): Response
     {
+        $repo = $this->getDoctrine()->getRepository(Experience::class);
+
+        $experiences = $repo->findAll();
+
         return $this->render('home/experiences.html.twig', [
             'controller_name' => 'HomeController',
+            'experiences' => $experiences
         ]);
     }
     /**
@@ -31,8 +39,25 @@ class HomeController extends AbstractController
      */
     public function hobbies(): Response
     {
+        $repo = $this->getDoctrine()->getRepository(Hobby::class);
+
+        $hobbies = $repo->findAll();
         return $this->render('home/hobbies.html.twig', [
             'controller_name' => 'HomeController',
+            'hobbies' => $hobbies
+        ]);
+    }
+        /**
+     * @Route("/educations", name="educations")
+     */
+    public function educations(): Response
+    {
+        $repo = $this->getDoctrine()->getRepository(Education::class);
+
+        $educations = $repo->findAll();
+        return $this->render('home/educations.html.twig', [
+            'controller_name' => 'HomeController',
+            'educations' => $educations
         ]);
     }
     /**
